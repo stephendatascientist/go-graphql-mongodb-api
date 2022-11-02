@@ -1,0 +1,21 @@
+type Customer{
+  id: ID!
+  name: String!
+  email: String!
+  mobile: String!
+}
+
+input NewCustomer{
+  name: String!
+  email: String!
+  mobile: String!
+}
+
+type Mutation{
+  createCustomer (input: NewCustomer!): Customer!
+}
+
+type Query {
+  customer(_id: String!): Customer!
+  customers: [Customer!]!
+}
